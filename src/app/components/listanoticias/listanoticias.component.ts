@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component,Input } from '@angular/core';
+import { IBlog } from '../../interfaces/iblog.interface';
 @Component({
   selector: 'app-listanoticias',
   imports: [],
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './listanoticias.component.css'
 })
 export class ListanoticiasComponent {
-
+  @Input() arrNoticias: IBlog[] = [];
 }
