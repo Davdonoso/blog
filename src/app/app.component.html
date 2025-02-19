@@ -2,10 +2,10 @@
   <section class="formulario">
     <H1>BLOG NOTICIAS</H1>
     <h2> Formulario Insertar Noticias</h2>
-    <app-formulario (noticiaemitida)="obtenerNoticia($event)></app-formulario>
+    <app-formulario (noticiaemitida)="obtenerNoticia($event)"></app-formulario>
   </section>
   <section class="noticias">
     <!-- lista de noticias -->
-     <app-listanoticias></app-listanoticias>
+     <app-listanoticias [arrNoticias]="arrNoticias"></app-listanoticias>
   </section>
 </main>
