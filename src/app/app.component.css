@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .flex {
+    display: block;
+  }
+  
+  .flex section {
+    width: 100%;
+  }
+  .noticias {
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+  
+  h2 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .formulario {
+   border-right: none;
+  }
+  
+  @media (min-width: 768px) {
+    .flex {
+      display: flex;
+    }
+    .noticias {
+      font-size: 15px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 500px;
+      margin: 0 5rem;
+      text-align: center;
+    }
+    .formulario {
+      max-width: 100%;
+      margin: 0 auto;
+      border-right: 3px solid #6666;
+    }
+  }
