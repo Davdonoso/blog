@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { IBlog } from '../../interfaces/iblog.interface';
 
@@ -12,7 +12,8 @@ import { IBlog } from '../../interfaces/iblog.interface';
 export class FormularioComponent {
 // Se define el formulario del blog
 formNoticias: FormGroup;
-
+// Emitimos los datos del formulario
+@Output() noticiaemitida = new EventEmitter<IBlog>(); // Evento para enviar la noticia al padre
 
 constructor() {
   // Inicializamos el formulario con los campos requeridos
