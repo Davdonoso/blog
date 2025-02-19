@@ -1,8 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IBlog } from '../../interfaces/iblog.interface';
+
 @Component({
   selector: 'app-formulario',
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })
@@ -19,5 +22,21 @@ constructor() {
     textoNoticia: new FormControl('', [Validators.required, Validators.minLength(15)]),
     fechaNoticia: new FormControl('', [Validators.required])
   }); 
+}
+
+// Función para guardar los datos del formulario
+guardar() {
+  if (this.formNoticias.valid) {
+    const nuevaNoticia: IBlog = {
+      titulo: this.formNoticias.value.tituloNoticia,
+      imagen: this.formNoticias.value.imagenNoticia,
+      textoNoticia: this.formNoticias.value.textoNoticia,
+      fechaPublicacion: this.formNoticias.value.fechaNoticia
+    };
+
+    this.noticiaemitida.emit(nuevaNoticia); // Emitimos la noticia al componente padre
+    this.formNoticias.reset(); // Limpiamos el formulario
+    
+}
 }
 }
