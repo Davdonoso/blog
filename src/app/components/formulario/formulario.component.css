@@ -1,0 +1,58 @@
+.blogger {
+    width: 100%;
+    display: flex;
+  }
+  .blog-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid blue;
+    background-color: beige;
+    border-radius: 10px;
+  }
+  h2 {
+    text-align: center;
+  }
+  
+  .agregar-noticia {
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  input {
+    font-size: 13px;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    font-size: 14px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .titulo {
+    font-size: 15px;
+    margin: 10px auto;
+  }
+  
+  .texto label {
+    text-align: center;
+  }
+  button {
+    margin-top: 15px;
+    color: blue;
+  }
+  .noticia img {
+    width: 500px;
+    height: 300px;
+  }
+  
+  .form-error {
+    font-size: 0.8rem;
+    color: red;
+  }
+  
