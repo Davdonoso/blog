@@ -1,1 +1,40 @@
-<p>formulario works!</p>
+<main class="blogger">
+    <section class="blog-container">
+        <h2>Crear Nueva Noticia</h2>
+        <form [formGroup]="formNoticias" (ngSubmit)="guardar()" class="agregar-noticia">
+          <div class="titulo">
+            <label for="tituloNoticia" class="label-margin">Título Noticia:</label>
+            <input type="text" id="tituloNoticia" name="tituloNoticia" formControlName="tituloNoticia"  placeholder="Introduzca Título de Noticia">
+          @if(formNoticias.get('tituloNoticia')?.hasError("required") && formNoticias.get('tituloNoticia')?.touched) {
+            <p class="form-error">Campo Nombre requerido</p>
+          }@else if (formNoticias.get('tituloNoticia')?.hasError("minlength") && formNoticias.get('tituloNoticia')?.touched){
+          <p class="form-error">Campo Nombre no debe tener menos de 5 caracteres</p>
+          }
+          </div>
+          <div class="imagen">
+            <label for="imagenNoticia" class="label-margin">Imagen (URL):</label>
+            <input type="texto" id="imagenNoticia" name="imagenNoticia" formControlName="imagenNoticia" placeholder="Introduzca URL de la imagen ">
+          </div>
+          @if(formNoticias.get('imagenNoticia')?.hasError("required") && formNoticias.get('imagenNoticia')?.touched) {
+            <p class="form-error">Campo Imagen requerido</p>
+          }   
+          <div class="texto">
+            <label for="textoNoticia" class="label-margin">Texto Noticia:</label>
+            <textarea id="textoNoticia" name="textoNoticia"  formControlName="textoNoticia" placeholder="Introduzca Texto de la Noticia"></textarea>
+            @if(formNoticias.get('textoNoticia')?.hasError("required") && formNoticias.get('textoNoticia')?.touched) {
+              <p class="form-error">Campo Texto requerido</p>
+            }
+          </div>
+          <div class="fecha">
+            <label for="fechaNoticia" class="label-margin">Fecha Publicacion:</label>
+            <input type="date" id="fechaNoticia" name="fechaNoticia" formControlName="fechaNoticia" placeholder="Introduzca Fecha de publicacion">
+            @if(formNoticias.get('fechaNoticia')?.hasError("required") && formNoticias.get('textoNoticia')?.touched) {
+              <p class="form-error">Campo Fecha requerido</p>
+            }
+          </div>
+          <input type="submit" value="Enviar Datos" [disabled]="!formNoticias.valid">
+        </form>
+        
+        </section>
+        
+      </main>
