@@ -1,1 +1,12 @@
-<p>listanoticias works!</p>
+<section>
+    @for(noticia of arrNoticias; track noticia) {
+    <div class="noticia">
+      <h2>Titulo: {{ noticia.titulo }}</h2>
+     <img [src]="noticia.imagen" alt="{{ noticia.titulo }}" />
+      <p>{{ noticia.textoNoticia }}</p>
+      <p>Fecha de publicación: {{ noticia.fechaPublicacion }}</p>
+    </div>
+    <hr />
+    }
+  </section>
+  
