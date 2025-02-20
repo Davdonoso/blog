@@ -1,3 +1,14 @@
 .noticia img {
-    width: 300px;
+    width: 200px;
+}
+.news {
+    border: 1px solid lightblue;
+}
+.noticia h2 {
+    font-size: 1rem;
+}
+.noticia p {
+    font-size: 0.7rem;
+    margin: 10px 10px;
+
 }
